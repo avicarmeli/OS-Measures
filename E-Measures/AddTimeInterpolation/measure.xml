@@ -1,0 +1,138 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>add_time_interpolation</name>
+  <uid>486b0f92-9e93-44bb-9c18-78d73198d50c</uid>
+  <version_id>2fb572f5-2fa9-483d-a4f2-7f8cbf05f2db</version_id>
+  <version_modified>20171010T065906Z</version_modified>
+  <xml_checksum>37742CD0</xml_checksum>
+  <class_name>AddTimeInterpolation</class_name>
+  <display_name>Add Time interpolation</display_name>
+  <description>The measure turns on time interpolation to all Schedule:Day:Interval objects in the workspace</description>
+  <modeler_description>The measure finds all Schedule:Day:Interval objects in the workspace and changes key Interpolate to Timestep to Yes
+
+
+
+
+
+
+
+
+
+DisplayAllWarnings
+
+
+
+
+DisplayExtraWarnings
+
+
+
+
+DisplayUnusedSchedules
+
+
+
+
+DisplayUnusedObjects
+
+
+
+
+DisplayAdvancedReportVariables
+
+
+
+
+DisplayZoneAirHeatBalanceOffBalance
+
+
+
+
+DoNotMirrorDetachedShading
+
+
+
+
+DisplayWeatherMissingDataWarnings
+
+
+
+
+ReportDuringWarmup
+
+
+
+
+ReportDetailedWarmupConvergence</modeler_description>
+  <arguments>
+    <argument>
+      <name>time_interp</name>
+      <display_name>Change all Day Schedules Time Interpolate to Yes?</display_name>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Whole Building.Whole Building Schedules</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>AddOutputDiagnostics_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>FC21E158</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.0.0</identifier>
+        <min_compatible>1.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>EE62B83E</checksum>
+    </file>
+  </files>
+</measure>
