@@ -1,0 +1,216 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>rain_water_collecting</name>
+  <uid>cf78d9ea-e616-45e0-9b70-39cf15470362</uid>
+  <version_id>1d595220-100f-4fb3-b123-acc149eff4da</version_id>
+  <version_modified>20171018T081505Z</version_modified>
+  <xml_checksum>B05E24FC</xml_checksum>
+  <class_name>RainWaterCollecting</class_name>
+  <display_name>RainWater Collecting</display_name>
+  <description>The measure adds rain water storage and let the user select rainwater collector surface from the model's surfaces. The measure asks for the water use equipment to be connected to the rain water storage to use its water as well as other sizing parameters. Finally the measure let the user select schedule to use as site precipitation schedule.</description>
+  <modeler_description>Rainwater tank overflow will be dirrected to drainage. Site precipitation is discreibed in m^3 and examples files can found at  E+ installation subfoldr: DataSetsPrecipitationSchedulesUSA.idf</modeler_description>
+  <arguments>
+    <argument>
+      <name>precipitation_schedule</name>
+      <display_name>Precipitation Schedule:</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>water_use_connections</name>
+      <display_name>Water Use Connections to Rainwater tank:</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>rainwater_tank_name</name>
+      <display_name>Rainwater collecting tank name:</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Rainwater Tank</default_value>
+    </argument>
+    <argument>
+      <name>rainwater_tank_capacity</name>
+      <display_name>Rainwater tank Maximum Capacity [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>4</default_value>
+    </argument>
+    <argument>
+      <name>rainwater_tank_init_vol</name>
+      <display_name>Rainwater tank Initial Volume [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>4</default_value>
+    </argument>
+    <argument>
+      <name>rainwater_tank_in_flowrate</name>
+      <display_name>Rainwater tank Design In Flow Rate [m3/s]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>rainwater_tank_out_flowrate</name>
+      <display_name>Rainwater tank Design out Flow Rate [m3/s]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.005</default_value>
+    </argument>
+    <argument>
+      <name>rainwater_tank_supply_type</name>
+      <display_name>Rainwater tank Type of Supply:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Mains</default_value>
+      <choices>
+        <choice>
+          <value>None</value>
+          <display_name>None</display_name>
+        </choice>
+        <choice>
+          <value>Mains</value>
+          <display_name>Mains</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>float_valve_on_cap</name>
+      <display_name>Float Valve On Capacity [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.05</default_value>
+    </argument>
+    <argument>
+      <name>float_valve_off_cap</name>
+      <display_name>Float Valve Off Capacity [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.135</default_value>
+    </argument>
+    <argument>
+      <name>float_backup_mains_cap</name>
+      <display_name>Backup Mains Capacity [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.04</default_value>
+    </argument>
+    <argument>
+      <name>tank_temp_schedule</name>
+      <display_name>Tank Temperature schedule:</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>rainwater_collector_name</name>
+      <display_name>Rainwater collector name:</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Rainwater Collector</default_value>
+    </argument>
+    <argument>
+      <name>collection_loss_factor</name>
+      <display_name>Collection Loss Factor:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>max_collection_rate</name>
+      <display_name>Maximum Collection Rate [m3/s]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>2</default_value>
+    </argument>
+    <argument>
+      <name>design_total_ann_precip</name>
+      <display_name>Design Level Total Annual Precipitation [m/yr]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.6</default_value>
+    </argument>
+    <argument>
+      <name>ave_ann_precip</name>
+      <display_name>Average Total Annual Precipitation [m/yr]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.6</default_value>
+    </argument>
+    <argument>
+      <name>add_meters</name>
+      <display_name>Add Meter:Custom and Output:Meter objects for the Rainwater tank?</display_name>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Service Water Heating.Distribution</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>rain_water_collecting_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>0D98CF80</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.2.0</identifier>
+        <min_compatible>2.2.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>36E64D0B</checksum>
+    </file>
+  </files>
+</measure>
