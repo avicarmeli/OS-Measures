@@ -1,0 +1,246 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>gray_water</name>
+  <uid>8eaec11d-a69d-4d6d-aee7-ff471464e0ce</uid>
+  <version_id>fabee159-ec57-4a85-9df7-450559fda326</version_id>
+  <version_modified>20171018T131958Z</version_modified>
+  <xml_checksum>AD1C9526</xml_checksum>
+  <class_name>GrayWater</class_name>
+  <display_name>GrayWater</display_name>
+  <description>The measure adds gray water storage and let the user select source and sink water use connection for that storage.</description>
+  <modeler_description>Gray water tank overflow will be dirrected to drainage. </modeler_description>
+  <arguments>
+    <argument>
+      <name>sink_water_use_connections</name>
+      <display_name>Water Use Connections to to be supplied with graywater:</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>source_water_use_connections</name>
+      <display_name>Water Use Connections to be used for gray water reclamation:</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>graywater_heat_exchange_type</name>
+      <display_name>Drain Water Heat Exchanger Type:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>CounterFlow</default_value>
+      <choices>
+        <choice>
+          <value>None</value>
+          <display_name>None</display_name>
+        </choice>
+        <choice>
+          <value>Ideal</value>
+          <display_name>Ideal</display_name>
+        </choice>
+        <choice>
+          <value>CounterFlow</value>
+          <display_name>CounterFlow</display_name>
+        </choice>
+        <choice>
+          <value>CrossFlow</value>
+          <display_name>CrossFlow</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>graywater_heat_exchange_dest</name>
+      <display_name>Drain Water Heat Exchanger Destination:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>PlantAndEquipment</default_value>
+      <choices>
+        <choice>
+          <value>Plant</value>
+          <display_name>Plant</display_name>
+        </choice>
+        <choice>
+          <value>Equipment</value>
+          <display_name>Equipment</display_name>
+        </choice>
+        <choice>
+          <value>PlantAndEquipment</value>
+          <display_name>PlantAndEquipment</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>graywater_ua</name>
+      <display_name>Drain Water Heat Exchanger U-Factor Times Area [W/K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>graywater_tank_name</name>
+      <display_name>Graywater tank name:</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Graywater Tank</default_value>
+    </argument>
+    <argument>
+      <name>graywater_tank_capacity</name>
+      <display_name>graywater tank Maximum Capacity [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.25</default_value>
+    </argument>
+    <argument>
+      <name>graywater_tank_init_vol</name>
+      <display_name>graywater tank Initial Volume [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>graywater_tank_in_flowrate</name>
+      <display_name>graywater tank Design In Flow Rate [m3/s]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>graywater_tank_out_flowrate</name>
+      <display_name>graywater tank Design out Flow Rate [m3/s]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.01</default_value>
+    </argument>
+    <argument>
+      <name>graywater_tank_supply_type</name>
+      <display_name>graywater tank Type of Supply:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Mains</default_value>
+      <choices>
+        <choice>
+          <value>None</value>
+          <display_name>None</display_name>
+        </choice>
+        <choice>
+          <value>Mains</value>
+          <display_name>Mains</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>float_valve_on_cap</name>
+      <display_name>Float Valve On Capacity [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.02</default_value>
+    </argument>
+    <argument>
+      <name>float_valve_off_cap</name>
+      <display_name>Float Valve Off Capacity [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.135</default_value>
+    </argument>
+    <argument>
+      <name>float_backup_mains_cap</name>
+      <display_name>Backup Mains Capacity [m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.04</default_value>
+    </argument>
+    <argument>
+      <name>tank_temp_schedule</name>
+      <display_name>Tank Temperature schedule:</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>add_meters</name>
+      <display_name>Add Meter:Custom and Output:Meter objects for the graywater tank?</display_name>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Service Water Heating.Distribution</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>gray_water_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>8B94068E</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.2.0</identifier>
+        <min_compatible>2.2.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>CF7B86B1</checksum>
+    </file>
+  </files>
+</measure>
