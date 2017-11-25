@@ -1,0 +1,157 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>schedule_utilities</name>
+  <uid>effb69e9-0cee-47f0-9d63-802e9b7b3518</uid>
+  <version_id>92ceb982-59c4-4ae8-abf8-ae59872aab2f</version_id>
+  <version_modified>20171119T122640Z</version_modified>
+  <xml_checksum>ADBF05B8</xml_checksum>
+  <class_name>ScheduleUtilities</class_name>
+  <display_name>Schedule Utilities</display_name>
+  <description>The Measure creates new Ruleset Schedule according to the simple formula entered operated on up to two Ruleset Schedules selected from the model</description>
+  <modeler_description>A and B are the operands corresponding to the selected schedules A and B. The entered formula can use operators + - * and / any float numbers and at least one operand. Brackets are allowed. All Operations are carried minute by minute. The division is the only irregular operator; when the enumerator is an operand it's meaning is (schedule value != 0), so the output would be Boolean represented by zeroes and ones</modeler_description>
+  <arguments>
+    <argument>
+      <name>a_schedule</name>
+      <display_name>Choose Schedule A.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>b_schedule</name>
+      <display_name>Choose Schedule B.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>formula</name>
+      <display_name>Enter Formula for schedules A and B</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>A*B</default_value>
+    </argument>
+    <argument>
+      <name>resultSchName</name>
+      <display_name>Result schedule name:</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>New Schedule</default_value>
+    </argument>
+    <argument>
+      <name>schPropInher</name>
+      <display_name>Schedule properties inheritance:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Leave Empty</default_value>
+      <choices>
+        <choice>
+          <value>From Schedule A</value>
+          <display_name>From Schedule A</display_name>
+        </choice>
+        <choice>
+          <value>From Schedule B</value>
+          <display_name>From Schedule B</display_name>
+        </choice>
+        <choice>
+          <value>Only Type Limits From Schedule A</value>
+          <display_name>Only Type Limits From Schedule A</display_name>
+        </choice>
+        <choice>
+          <value>Only Type Limits From Schedule B</value>
+          <display_name>Only Type Limits From Schedule B</display_name>
+        </choice>
+        <choice>
+          <value>Only Default Days From Schedule A</value>
+          <display_name>Only Default Days From Schedule A</display_name>
+        </choice>
+        <choice>
+          <value>Only Default Days From Schedule B</value>
+          <display_name>Only Default Days From Schedule B</display_name>
+        </choice>
+        <choice>
+          <value>Leave Empty</value>
+          <display_name>Leave Empty</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Whole Building.Whole Building Schedules</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>schedule_utilities_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>78B047A0</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <filename>convertToRullSch.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>A5783B8E</checksum>
+    </file>
+    <file>
+      <filename>schedule_utilities_debug.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>00EF3FAF</checksum>
+    </file>
+    <file>
+      <filename>measure before cleaning.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>F5B1118F</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.2.0</identifier>
+        <min_compatible>2.2.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>C65B9F30</checksum>
+    </file>
+  </files>
+</measure>
