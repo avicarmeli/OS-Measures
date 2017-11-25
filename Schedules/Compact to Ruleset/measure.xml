@@ -1,0 +1,78 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>compact_to_ruleset_schedule</name>
+  <uid>e77d3b76-2257-454b-840b-44b5e5caf645</uid>
+  <version_id>3dd5af35-1081-4237-9292-5fa6613a63b5</version_id>
+  <version_modified>20171124T191257Z</version_modified>
+  <xml_checksum>ADBF05B8</xml_checksum>
+  <class_name>CompactToRulesetSchedule</class_name>
+  <display_name>Compact to Ruleset Schedule</display_name>
+  <description>Translates Compact Schedule to Ruleset schedule.</description>
+  <modeler_description>The measure use non optimal algoritem to represent Compact schedule as Ruleset schedule</modeler_description>
+  <arguments>
+    <argument>
+      <name>schedule</name>
+      <display_name>Choose a Schedule to Translate to Ruleset.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Whole Building.Whole Building Schedules</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>compact_to_ruleset_schedule_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>5BE0B049</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>343E4E60</checksum>
+    </file>
+  </files>
+</measure>
