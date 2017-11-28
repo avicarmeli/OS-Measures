@@ -239,6 +239,7 @@ class CompactToRulesetSchedule < OpenStudio::Ruleset::ModelUserScript
 				# if there are similar days 
 				if daysSim[uniqDaysIndex[i]][0] != 0 
 					lastSimDay = daysSim[uniqDaysIndex[i]].last - 1 
+					yearEndDay = patLast * 7 + lastSimDay
 					daysSim[uniqDaysIndex[i]].each do |dsim|
 						ruleDays[weekDays[dsim - 1] - 1] = weekDays[dsim - 1]
 					end
