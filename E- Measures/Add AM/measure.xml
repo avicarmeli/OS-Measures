@@ -1,0 +1,255 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>solar_thermal_add_availability_managers</name>
+  <uid>ff0699fe-987a-4a27-93bd-6f4ef7c8ac78</uid>
+  <version_id>7c983cf2-2f07-4299-b4cc-ea82390f4f37</version_id>
+  <version_modified>20171203T152104Z</version_modified>
+  <xml_checksum>F9D378C6</xml_checksum>
+  <class_name>SolarThermalAddAvailabilityManagers</class_name>
+  <display_name>Solar Thermal add Availability Managers</display_name>
+  <description>Adds Availability Managers to Sollar Collector plant loop if present</description>
+  <modeler_description>Up to three Availability Managers will be added to the Solar collecttor Plant loop. An Availability Manager Assignment List will be added aswell with the 
+ Availability Managers in the order entered.</modeler_description>
+  <arguments>
+    <argument>
+      <name>plantLoopsSel</name>
+      <display_name>Plant Loop To add Availability Managers to?</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>availManger01</name>
+      <display_name>First Availability Manager type:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <choices>
+        <choice>
+          <value>HighTemperatureTurnOff</value>
+          <display_name>HighTemperatureTurnOff</display_name>
+        </choice>
+        <choice>
+          <value>LowTemperatureTurnOn</value>
+          <display_name>LowTemperatureTurnOn</display_name>
+        </choice>
+        <choice>
+          <value>DifferentialThermostat</value>
+          <display_name>DifferentialThermostat</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>availManger01name</name>
+      <display_name>First Availability Manager name:</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>First Availability Manager</default_value>
+    </argument>
+    <argument>
+      <name>avMng01hotNode</name>
+      <display_name>1st Manager node/Hot Node name:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>avMng01onTemp</name>
+      <display_name>1st Manager Temperature [C]/ dT On Limit [K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>60</default_value>
+    </argument>
+    <argument>
+      <name>avMng01coldNode</name>
+      <display_name>1st Manager cold node name:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>avMng01offTemp</name>
+      <display_name>1st Manager dT Off Limit [K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>60</default_value>
+    </argument>
+    <argument>
+      <name>availManger02</name>
+      <display_name>Second Availability Manager type:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>None</default_value>
+      <choices>
+        <choice>
+          <value>HighTemperatureTurnOff</value>
+          <display_name>HighTemperatureTurnOff</display_name>
+        </choice>
+        <choice>
+          <value>LowTemperatureTurnOn</value>
+          <display_name>LowTemperatureTurnOn</display_name>
+        </choice>
+        <choice>
+          <value>DifferentialThermostat</value>
+          <display_name>DifferentialThermostat</display_name>
+        </choice>
+        <choice>
+          <value>None</value>
+          <display_name>None</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>availManger02name</name>
+      <display_name>Second Availability Manager name:</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Second Availability Manager</default_value>
+    </argument>
+    <argument>
+      <name>avMng02hotNode</name>
+      <display_name>2nd Manager node/Hot Node name:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>avMng02onTemp</name>
+      <display_name>2nd Manager Temperature [C]/ dT On Limit [K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>60</default_value>
+    </argument>
+    <argument>
+      <name>avMng02coldNode</name>
+      <display_name>2nd Manager cold node name:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>avMng02offTemp</name>
+      <display_name>2nd Manager dT Off Limit [K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>60</default_value>
+    </argument>
+    <argument>
+      <name>availManger03</name>
+      <display_name>Third Availability Manager type:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>None</default_value>
+      <choices>
+        <choice>
+          <value>HighTemperatureTurnOff</value>
+          <display_name>HighTemperatureTurnOff</display_name>
+        </choice>
+        <choice>
+          <value>LowTemperatureTurnOn</value>
+          <display_name>LowTemperatureTurnOn</display_name>
+        </choice>
+        <choice>
+          <value>DifferentialThermostat</value>
+          <display_name>DifferentialThermostat</display_name>
+        </choice>
+        <choice>
+          <value>None</value>
+          <display_name>None</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>availManger03name</name>
+      <display_name>Third Availability Manager name:</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Third Availability Manager</default_value>
+    </argument>
+    <argument>
+      <name>avMng03hotNode</name>
+      <display_name>3rd Manager node/Hot Node name:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>avMng03onTemp</name>
+      <display_name>3rd Manager Temperature [C]/ dT On Limit [K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>60</default_value>
+    </argument>
+    <argument>
+      <name>avMng03coldNode</name>
+      <display_name>3rd Manager cold node name:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>avMng03offTemp</name>
+      <display_name>3rd Manager dT Off Limit [K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>60</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Service Water Heating.Water Heating</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>solar_thermal_add_availability_managers_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>EB824893</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>263A3D68</checksum>
+    </file>
+  </files>
+</measure>
