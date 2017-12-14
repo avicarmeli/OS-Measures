@@ -250,6 +250,7 @@ class CompactToRulesetSchedule < OpenStudio::Ruleset::ModelUserScript
 				nextRuleInd += 1
 				workPat.map! {|v| v == patDaySch  ? -1 : v}
 				patInd = 0
+				workPat.push(-1)
 				while (workPat.map {|v| v > 0 and v < occ.length ? 1 : 0}.count(1) > 0) and (workUniq.length > 1)
 					nextDaySchStart = (workPat[patInd ... workPat.length]).index {|v| v >= 0 and v < occ.length} + patInd
 					nextDaySch = workPat[nextDaySchStart]
@@ -265,7 +266,9 @@ class CompactToRulesetSchedule < OpenStudio::Ruleset::ModelUserScript
 					rulesTable.insert(nextRuleInd, [nextDaySch,yearStartDay,yearEndDay,ruleDays])
 					#runner.registerInfo("[nextDaySch,yearStartDay,yearEndDay,ruleDays]: #{[nextDaySch,yearStartDay,yearEndDay,ruleDays].to_s} ") ### Debug ###########################
 					nextRuleInd += 1
-					workPat[nextDaySchStart..nextDaySchEnd] = -1
+					for n in nextDaySchStart..nextDaySchEnd
+						workPat[n]= -1
+					end
 					patInd = nextDaySchEnd + 1
 				end
 			end # each daysPaterns
