@@ -718,17 +718,17 @@ class ScheduleUtilities < OpenStudio::Ruleset::ModelUserScript
 	# set Rullset Schedule properties
 	case schPropInher
 	when "From Schedule A"
-		memSch.setScheduleTypeLimits(a_schedule.scheduleTypeLimits)
+		memSch.setScheduleTypeLimits(a_schedule.scheduleTypeLimits.get)
 		memSch.setSummerDesignDaySchedule(a_schedule.summerDesignDaySchedule)
 		memSch.setWinterDesignDaySchedule(a_schedule.winterDesignDaySchedule)
 	when "From Schedule B"
-		memSch.setScheduleTypeLimits(b_schedule.scheduleTypeLimits)
+		memSch.setScheduleTypeLimits(b_schedule.scheduleTypeLimits.get)
 		memSch.setSummerDesignDaySchedule(b_schedule.summerDesignDaySchedule)
 		memSch.setWinterDesignDaySchedule(b_schedule.winterDesignDaySchedule)
 	when "Only Type Limits From Schedule A"
-		memSch.setScheduleTypeLimits(a_schedule.scheduleTypeLimits)
+		memSch.setScheduleTypeLimits(a_schedule.scheduleTypeLimits.get)
 	when "Only Type Limits From Schedule B"
-		memSch.setScheduleTypeLimits(b_schedule.scheduleTypeLimits)
+		memSch.setScheduleTypeLimits(b_schedule.scheduleTypeLimits.get)
 	when "Only Default Days From Schedule A"
 		memSch.setSummerDesignDaySchedule(a_schedule.summerDesignDaySchedule)
 		memSch.setWinterDesignDaySchedule(a_schedule.winterDesignDaySchedule)
