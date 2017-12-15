@@ -662,11 +662,15 @@ class ScheduleUtilities < OpenStudio::Ruleset::ModelUserScript
 			elsif prase[2][2] == 'B'
 				sch_1 = b_schedule
 			else
-				sch_1 = memSch
+				runner.registerInfo("(prase[2][2]): #{(prase[2][2]).to_s} ") ### Debug ###########################
+				memDepth = (prase[2][2]).ord - 'C'.ord
+				sch_1 = memSch[memDepth]
 			end
 			if prase[2][3] == true
 				outSchedules, yearOccu = opRullSch( sch_1, -1.0 , '*', model, runner)
+				#runner.registerInfo("outSchedules: #{outSchedules.to_s} ") ### Debug ###########################
 				sch_1 = convertToRullSch(outSchedules, yearOccu,'__Temp',model,runner)
+				#runner.registerInfo("yearOccu: #{yearOccu.to_s} ") ### Debug ###########################
 				tempSchedules << sch_1
 			end
 		else
@@ -678,7 +682,9 @@ class ScheduleUtilities < OpenStudio::Ruleset::ModelUserScript
 			elsif prase[3][2] == 'B'
 				sch_2 = b_schedule
 			else
-				sch_2 = memSch
+				runner.registerInfo("(prase[3][2]): #{(prase[3][2]).to_s} ") ### Debug ###########################
+				memDepth = (prase[3][2]).ord - 'C'.ord
+				sch_2 = memSch[memDepth]
 			end
 		else
 			sch_2 = prase[3][2]
@@ -690,26 +696,27 @@ class ScheduleUtilities < OpenStudio::Ruleset::ModelUserScript
 		if (sch_1.class == Float and sch_2.class == Float)
 			case op
 			when '+'
-				memSch = sch_1 + sch_2
+				memSch << (sch_1 + sch_2)
 			when '-'
-				memSch = sch_1 - sch_2
+				memSch << (sch_1 - sch_2)
 			when '*'
-				memSch = sch_1 * sch_2
+				memSch << (sch_1 * sch_2)
 			when '/'
-				memSch = sch_1 / sch_2
+				memSch << (sch_1 / sch_2)
 			else
 			end
 		else
 			schName = '__Temp'
 			schName = resultSchName if index == form.length-1
 			outSchedules, yearOccu = opRullSch( sch_1, sch_2 , op, model, runner)
-			runner.registerInfo("outSchedules: #{outSchedules.to_s} ") ### Debug ###########################
-			memSch = convertToRullSch(outSchedules, yearOccu,schName,model,runner)
-			runner.registerInfo("memSch name: #{memSch.name.to_s} ") ### Debug ###########################
-			tempSchedules << memSch if index < form.length-1
+			#runner.registerInfo("outSchedules: #{outSchedules.to_s} ") ### Debug ###########################
+			memSch << convertToRuleSch(outSchedules, yearOccu,schName,model,runner)
+			#runner.registerInfo("yearOccu: #{yearOccu.to_s} ") ### Debug ###########################
+			tempSchedules << memSch.last if index < form.length-1
 		end
 	end #for.each
 	
+	memSch = memSch.last
 	# delete temp schedules
 	tempSchedules.each do |tempSchedule|
 		tempSchedule.remove
