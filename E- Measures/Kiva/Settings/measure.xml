@@ -1,0 +1,180 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>kiva_settings</name>
+  <uid>2339d185-592a-4aaf-a212-bf70c8e81a22</uid>
+  <version_id>e3bf2f0d-131d-4e2d-ac6d-b43fa1e8ab91</version_id>
+  <version_modified>20171210T190039Z</version_modified>
+  <xml_checksum>7B969721</xml_checksum>
+  <class_name>KivaSettings</class_name>
+  <display_name>Kiva Settings</display_name>
+  <description>E+ measure to popolate the Kiva settings values</description>
+  <modeler_description>E+ measure to popolate the Kiva settings values</modeler_description>
+  <arguments>
+    <argument>
+      <name>soilConductivity</name>
+      <display_name>Soil Thermal Conductivity [W/m-K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>1.73</default_value>
+    </argument>
+    <argument>
+      <name>soilDensity</name>
+      <display_name>Soil Density [Kg/m3]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>1842</default_value>
+    </argument>
+    <argument>
+      <name>soilSpecificHeat</name>
+      <display_name>Soil Specific Heat [J/kg-K]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>419</default_value>
+    </argument>
+    <argument>
+      <name>groundSolarAbs</name>
+      <display_name>Ground Solar Absorptivity:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.9</default_value>
+    </argument>
+    <argument>
+      <name>groundThermalAbs</name>
+      <display_name>Ground Thermal Absorptivity:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.9</default_value>
+    </argument>
+    <argument>
+      <name>groundSurfaceRough</name>
+      <display_name>Ground Surface Roughness [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.03</default_value>
+    </argument>
+    <argument>
+      <name>farFieldWidth</name>
+      <display_name>Far-Field Width [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>40</default_value>
+    </argument>
+    <argument>
+      <name>deepGroundBoundCond</name>
+      <display_name>Deep-Ground Boundary Condition:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Autoselect</default_value>
+      <choices>
+        <choice>
+          <value>ZeroFlux</value>
+          <display_name>ZeroFlux</display_name>
+        </choice>
+        <choice>
+          <value>GroundWater</value>
+          <display_name>GroundWater</display_name>
+        </choice>
+        <choice>
+          <value>Autoselect</value>
+          <display_name>Autoselect</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>deepGroundDepth</name>
+      <display_name>Deep-Ground Depth [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>40</default_value>
+    </argument>
+    <argument>
+      <name>minCellDim</name>
+      <display_name>Minimum Cell Dimension [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.02</default_value>
+    </argument>
+    <argument>
+      <name>maxCellGrowthCo</name>
+      <display_name>Maximum Cell Growth Coefficient:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>1.5</default_value>
+    </argument>
+    <argument>
+      <name>simTstep</name>
+      <display_name>Simulation Timestep:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Hourly</default_value>
+      <choices>
+        <choice>
+          <value>Hourly</value>
+          <display_name>Hourly</display_name>
+        </choice>
+        <choice>
+          <value>Timestep</value>
+          <display_name>Timestep</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Opaque</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>kiva_settings_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>A0F4EC1C</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>3191391D</checksum>
+    </file>
+  </files>
+</measure>
