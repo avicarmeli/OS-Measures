@@ -1,0 +1,204 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>foundation_kiva</name>
+  <uid>41364413-69af-4e8a-9523-ef362f80bf79</uid>
+  <version_id>fc202ca5-f34c-4a0d-94b3-68f7a687d958</version_id>
+  <version_modified>20171223T194510Z</version_modified>
+  <xml_checksum>7B969721</xml_checksum>
+  <class_name>FoundationKiva</class_name>
+  <display_name>Foundation Kiva</display_name>
+  <description>Adds Foundation Kiva object to selected floor Surface and link that object to all walls in that zoon with boundery of Outdoors or Ground.
+	Creates a SurfaceProperty:ExposedFoundationPerimeter object as well</description>
+  <modeler_description>Adds Foundation Kiva object to selected Surface</modeler_description>
+  <arguments>
+    <argument>
+      <name>surfName</name>
+      <display_name>Select Surface</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>foundationKivaName</name>
+      <display_name>FoundationKiva object name:</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>intHorInsMat</name>
+      <display_name>Interior Horizontal Insulation Material Name</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <choices>
+        <choice>
+          <value>none</value>
+          <display_name>none</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>intHorInsDep</name>
+      <display_name>Interior Horizontal Insulation Depth [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>intHorInsWid</name>
+      <display_name>Interior Horizontal Insulation Width [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.6</default_value>
+    </argument>
+    <argument>
+      <name>intVerInsMat</name>
+      <display_name>Interior Vertical Insulation Material Name</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <choices>
+        <choice>
+          <value>none</value>
+          <display_name>none</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>intVerInsDep</name>
+      <display_name>Interior Vertical Insulation Depth [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>extHorInsMat</name>
+      <display_name>Exterior Horizontal Insulation Material Name</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <choices>
+        <choice>
+          <value>none</value>
+          <display_name>none</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>extHorInsDep</name>
+      <display_name>Exterior Horizontal Insulation Depth [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>extHorInsWid</name>
+      <display_name>Exterior Horizontal Insulation Width [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.6</default_value>
+    </argument>
+    <argument>
+      <name>extVerInsMat</name>
+      <display_name>Exterior Vertical Insulation Material Name</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <choices>
+        <choice>
+          <value>none</value>
+          <display_name>none</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>extVerInsDep</name>
+      <display_name>Exterior Vertical Insulation Depth [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>wallHeiAbGrade</name>
+      <display_name>Wall Height Above Grade [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>wallDepBelSlab</name>
+      <display_name>Wall Depth Below Slab [m]:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.3</default_value>
+    </argument>
+    <argument>
+      <name>footWallConstName</name>
+      <display_name>Footing Wall Construction Name</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <choices>
+        <choice>
+          <value>none</value>
+          <display_name>none</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Opaque</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>foundation_kiva_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>14B64AE1</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>641E730A</checksum>
+    </file>
+  </files>
+</measure>
