@@ -1,0 +1,156 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>constant_schedule</name>
+  <uid>5d1bd67a-55ae-48ee-9747-0efdd9e0b2cc</uid>
+  <version_id>40039a13-920f-4bad-b83d-c5dec07e12e9</version_id>
+  <version_modified>20171226T124651Z</version_modified>
+  <xml_checksum>ADBF05B8</xml_checksum>
+  <class_name>ConstantSchedule</class_name>
+  <display_name>Constant Schedule</display_name>
+  <description>reates new constant schedule.</description>
+  <modeler_description>Creates new constant schedule.</modeler_description>
+  <arguments>
+    <argument>
+      <name>constSchName</name>
+      <display_name>New Constant Schedule name</display_name>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>schTypeLim</name>
+      <display_name>Schedule Type Limits:</display_name>
+      <type>Choice</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Leave Empty</default_value>
+      <choices>
+        <choice>
+          <value>Dimensionless</value>
+          <display_name>Dimensionless</display_name>
+        </choice>
+        <choice>
+          <value>Temperature</value>
+          <display_name>Temperature</display_name>
+        </choice>
+        <choice>
+          <value>DeltaTemperature</value>
+          <display_name>DeltaTemperature</display_name>
+        </choice>
+        <choice>
+          <value>PrecipitationRate</value>
+          <display_name>PrecipitationRate</display_name>
+        </choice>
+        <choice>
+          <value>Angle</value>
+          <display_name>Angle</display_name>
+        </choice>
+        <choice>
+          <value>Convection Coefficient</value>
+          <display_name>Convection Coefficient</display_name>
+        </choice>
+        <choice>
+          <value>Activity Level</value>
+          <display_name>Activity Level</display_name>
+        </choice>
+        <choice>
+          <value>Velocity</value>
+          <display_name>Velocity</display_name>
+        </choice>
+        <choice>
+          <value>Capacity</value>
+          <display_name>Capacity</display_name>
+        </choice>
+        <choice>
+          <value>Power</value>
+          <display_name>Power</display_name>
+        </choice>
+        <choice>
+          <value>Availability</value>
+          <display_name>Availability</display_name>
+        </choice>
+        <choice>
+          <value>Percent</value>
+          <display_name>Percent</display_name>
+        </choice>
+        <choice>
+          <value>Control</value>
+          <display_name>Control</display_name>
+        </choice>
+        <choice>
+          <value>Mode</value>
+          <display_name>Mode</display_name>
+        </choice>
+        <choice>
+          <value>Leave Empty</value>
+          <display_name>Leave Empty</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>constSchVal</name>
+      <display_name>Constant Schedule value:</display_name>
+      <type>Double</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Whole Building.Whole Building Schedules</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>constant_schedule_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>8781B193</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>CCA8C51E</checksum>
+    </file>
+  </files>
+</measure>
