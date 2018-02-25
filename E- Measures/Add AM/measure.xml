@@ -1,0 +1,93 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>add_availability_manager</name>
+  <uid>272bd063-540a-4054-b7aa-723a9a924b02</uid>
+  <version_id>d3df1017-1e86-4988-aeac-7c9a20b8a1ae</version_id>
+  <version_modified>20180114T115319Z</version_modified>
+  <xml_checksum>D3920775</xml_checksum>
+  <class_name>AddAvailabilityManager</class_name>
+  <display_name>Add Availability Manager</display_name>
+  <description>The Measure adds a Schedule Availability Manager to the Selected Plant Loop</description>
+  <modeler_description>The Measure adds a Schedule Availability Manager to the Selected Plant Loop</modeler_description>
+  <arguments>
+    <argument>
+      <name>selPlantLoop</name>
+      <display_name>Choose Plant Loop.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>aM_name</name>
+      <display_name>New Availability Manager name</display_name>
+      <description>This name will be used as the name of the new Availability Manager.</description>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>a_schedule</name>
+      <display_name>Choose Schedule.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>HVAC.HVAC Controls</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>add_availability_manager_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>93CBF185</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.4.0</identifier>
+        <min_compatible>2.4.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>3AF75488</checksum>
+    </file>
+  </files>
+</measure>
